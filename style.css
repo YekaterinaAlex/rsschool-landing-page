@@ -227,3 +227,49 @@ header {
 .slider-controls span:first-child {
   background-color: #665f55;
 }
+
+#about {
+  padding-top: 100px;
+}
+
+#about h2 {
+  margin: 0;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+#about h2 span {
+  font-style: italic;
+  color: #b0907a;
+}
+
+.about-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.about-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-column:first-child img:first-child,
+.about-column:last-child img:last-child {
+  height: 590px;
+}
+
+.about-column:first-child img:last-child,
+.about-column:last-child img:first-child {
+  height: 430px;
+}
+
+.about-images img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}
