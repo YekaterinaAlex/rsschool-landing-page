@@ -145,3 +145,85 @@ header {
   font-style: italic;
   color: #b0907a;
 }
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.slides {
+  width: 480px;
+  text-align: center;
+}
+
+.coffee-slide {
+  display: none;
+}
+
+.coffee-slide:first-child {
+  display: block;
+}
+
+.coffee-slide img {
+  display: block;
+  width: 480px;
+  height: 480px;
+  object-fit: contain;
+}
+
+.coffee-slide h3 {
+  margin: 20px 0 16px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.coffee-slide p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.coffee-slide p:last-child {
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.slider-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+
+  padding: 0;
+  border: 1px solid #665f55;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #403f3d;
+  cursor: pointer;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.slider-controls span {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #c1b6ad;
+}
+
+.slider-controls span:first-child {
+  background-color: #665f55;
+}
