@@ -24,6 +24,10 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  margin: 0;
+}
+
 header,
 main,
 footer {
@@ -71,4 +75,73 @@ header {
 .menu-link img {
   width: 20px;
   height: 20px;
+}
+
+#enjoy {
+  min-height: 644px;
+  border-radius: 40px;
+  padding: 100px;
+  margin-top: 20px;
+
+  background-image: url('assets/images/img-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.enjoy-content {
+  width: 530px;
+}
+
+.enjoy-content h1 {
+  margin: 0;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 105%;
+  color: #e1d4c9;
+}
+
+.enjoy-content h1 span {
+  font-style: italic;
+  color: #b0907a;
+}
+
+.enjoy-content p {
+  margin: 40px 0;
+  font-size: 16px;
+  line-height: 150%;
+  color: #e1d4c9;
+}
+
+.enjoy-content > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 64px;
+
+  border-radius: 100px;
+  background-color: #e1d4c9;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #403f3d;
+}
+
+#favorite {
+  padding-top: 100px;
+}
+
+#favorite h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+#favorite span {
+  font-style: italic;
+  color: #b0907a;
 }
