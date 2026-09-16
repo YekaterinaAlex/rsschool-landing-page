@@ -335,3 +335,88 @@ header {
   width: 36px;
   height: 36px;
 }
+
+#contacts {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+
+  margin-top: 100px;
+  padding: 100px;
+
+  border-radius: 40px;
+  background-color: #665f55;
+  color: #e1d4c9;
+}
+
+.footer-socials,
+.footer-contacts {
+  flex: 1;
+}
+
+.footer-socials h2 {
+  margin: 0;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.footer-socials h2 span {
+  font-style: italic;
+  color: #b0907a;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+
+  border: 1px solid #c1b6ad;
+  border-radius: 50%;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-contacts h3 {
+  margin: 0 0 40px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.footer-contacts address {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  font-style: normal;
+}
+
+.footer-contacts a,
+.footer-contacts p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-contacts img {
+  width: 20px;
+  height: 20px;
+}
