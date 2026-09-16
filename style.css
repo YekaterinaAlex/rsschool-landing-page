@@ -1,5 +1,21 @@
-* {
-  box-sizing: border-box;
+:root {
+  --color-background: #e1d4c9;
+  --color-text-dark: #403f3d;
+  --color-text-light: #e1d4c9;
+  --color-accent: #b0907a;
+  --color-border-dark: #665f55;
+  --color-border-light: #c1b6ad;
+
+  --color-surface-dark: #665f55;
+  --color-on-dark: #e1d4c9;
+}
+
+body.dark-theme {
+  --color-background: #403f3d;
+  --color-text-dark: #e1d4c9;
+  --color-text-light: #403f3d;
+  --color-border-dark: #c1b6ad;
+  --color-border-light: #665f55;
 }
 
 *,
@@ -15,8 +31,8 @@ html {
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: #403f3d;
-  background-color: #e1d4c9;
+  color: var(--color-text-dark);
+  background-color: var(--color-background);
 }
 
 a {
@@ -60,10 +76,70 @@ header {
   display: block;
 }
 
+.logo-dark {
+  display: none;
+}
+
+body.dark-theme .logo {
+  display: none;
+}
+
+body.dark-theme .logo-dark {
+  display: block;
+}
+
 .logo img {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  border: 1px solid var(--color-border-dark);
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--color-text-dark);
+  cursor: pointer;
+}
+
+.burger-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border-dark);
+  border-radius: 50%;
+
+  background: transparent;
+}
+
+.burger-button span {
+  display: block;
+
+  width: 16px;
+  height: 1px;
+
+  margin: 5px auto;
+
+  background-color: var(--color-text-dark);
 }
 
 .menu-link {
@@ -98,19 +174,19 @@ header {
   font-size: 72px;
   font-weight: 600;
   line-height: 105%;
-  color: #e1d4c9;
+  color: var(--color-on-dark);
 }
 
 .enjoy-content h1 span {
   font-style: italic;
-  color: #b0907a;
+  color: var(--color-accent);
 }
 
 .enjoy-content p {
   margin: 40px 0;
   font-size: 16px;
   line-height: 150%;
-  color: #e1d4c9;
+  color: var(--color-on-dark);
 }
 
 .enjoy-content > a {
@@ -122,11 +198,11 @@ header {
   height: 64px;
 
   border-radius: 100px;
-  background-color: #e1d4c9;
+  background-color: var(--color-on-dark);
+  color: #403f3d;
 
   font-size: 16px;
   font-weight: 600;
-  color: #403f3d;
 }
 
 #favorite {
@@ -143,7 +219,7 @@ header {
 
 #favorite span {
   font-style: italic;
-  color: #b0907a;
+  color: var(--color-accent);
 }
 
 .slider {
@@ -202,11 +278,11 @@ header {
   height: 60px;
 
   padding: 0;
-  border: 1px solid #665f55;
+  border: 1px solid var(--color-border-dark);
   border-radius: 50%;
 
   background: transparent;
-  color: #403f3d;
+  color: var(--color-text-dark);
   cursor: pointer;
 }
 
@@ -221,11 +297,11 @@ header {
   width: 40px;
   height: 4px;
   border-radius: 100px;
-  background-color: #c1b6ad;
+  background-color: var(--color-border-light);
 }
 
 .slider-controls span:first-child {
-  background-color: #665f55;
+  background-color: var(--color-border-dark);
 }
 
 #about {
@@ -241,7 +317,7 @@ header {
 
 #about h2 span {
   font-style: italic;
-  color: #b0907a;
+  color: var(--color-accent);
 }
 
 .about-images {
@@ -286,7 +362,7 @@ header {
   max-width: 630px;
 }
 
-.mobile-app-content img {
+.mobile-app-image img {
   display: block;
   width: 630px;
   max-width: 100%;
@@ -295,7 +371,7 @@ header {
 
 #mobile-app h2 span {
   font-style: italic;
-  color: #b0907a;
+  color: var(--color-accent);
 }
 
 .mobile-app-content h2 {
@@ -324,7 +400,7 @@ header {
   height: 64px;
   padding: 12px 20px;
   gap: 8px;
-  border: 1px solid #665f55;
+  border: 1px solid var(--color-border-dark);
   border-radius: 100px;
 
   font-size: 16px;
@@ -345,8 +421,8 @@ header {
   padding: 100px;
 
   border-radius: 40px;
-  background-color: #665f55;
-  color: #e1d4c9;
+  background-color: var(--color-surface-dark);
+  color: var(--color-on-dark);
 }
 
 .footer-socials,
@@ -363,7 +439,7 @@ header {
 
 .footer-socials h2 span {
   font-style: italic;
-  color: #b0907a;
+  color: var(--color-accent);
 }
 
 .social-links {
@@ -380,7 +456,7 @@ header {
   width: 60px;
   height: 60px;
 
-  border: 1px solid #c1b6ad;
+  border: 1px solid var(--color-border-light);
   border-radius: 50%;
 }
 
