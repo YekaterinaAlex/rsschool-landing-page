@@ -273,3 +273,65 @@ header {
   border-radius: 20px;
   object-fit: cover;
 }
+
+#mobile-app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  padding-top: 100px;
+}
+
+.mobile-app-content {
+  max-width: 630px;
+}
+
+.mobile-app-content img {
+  display: block;
+  width: 630px;
+  max-width: 100%;
+  height: auto;
+}
+
+#mobile-app h2 span {
+  font-style: italic;
+  color: #b0907a;
+}
+
+.mobile-app-content h2 {
+  margin: 0;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.mobile-app-content p {
+  margin: 40px 0;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.app-button {
+  display: flex;
+  align-items: center;
+
+  width: 200px;
+  height: 64px;
+  padding: 12px 20px;
+  gap: 8px;
+  border: 1px solid #665f55;
+  border-radius: 100px;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.app-button img {
+  width: 36px;
+  height: 36px;
+}
