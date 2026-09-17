@@ -101,20 +101,30 @@ body.dark-theme .logo-dark {
 }
 
 .theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 44px;
-  height: 44px;
+  width: 104px;
+  height: 52px;
   padding: 0;
-
-  border: 1px solid var(--color-border-dark);
-  border-radius: 50%;
-
+  border: 0;
   background: transparent;
-  color: var(--color-text-dark);
   cursor: pointer;
+}
+
+.theme-toggle img {
+  display: block;
+  width: 104px;
+  height: 52px;
+}
+
+.theme-switch-dark {
+  display: none !important;
+}
+
+body.dark-theme .theme-switch-light {
+  display: none;
+}
+
+body.dark-theme .theme-switch-dark {
+  display: block !important;
 }
 
 .burger-button {
