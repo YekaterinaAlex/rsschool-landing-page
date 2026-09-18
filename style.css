@@ -9,7 +9,7 @@
   --color-surface-dark: #665f55;
   --color-on-dark: #e1d4c9;
 
-  --color-hover-bg: #403f3d;
+  --color-hover-bg: #665f55;
   --color-hover-text: #e1d4c9;
   --color-hover-social: #403f3d;
 }
@@ -23,7 +23,7 @@ body.dark-theme {
 
   --color-hover-bg: #e1d4c9;
   --color-hover-text: #403f3d;
-  --color-hover-social: #c1b6ad;
+  --color-hover-social: #292826;
 }
 
 *,
@@ -254,6 +254,15 @@ body.dark-theme .theme-switch-dark {
   font-weight: 600;
 }
 
+.enjoy-menu-button img {
+  width: 0;
+  height: 20px;
+  margin-left: 0;
+  opacity: 0;
+
+  transition: width 0.3s ease, margin-left 0.3s ease, opacity 0.3s ease;
+}
+
 #favorite {
   padding-top: 100px;
 }
@@ -444,27 +453,48 @@ body.dark-theme .theme-switch-dark {
 .app-button {
   display: flex;
   align-items: center;
+  gap: 8px;
 
   width: 200px;
   height: 64px;
   padding: 12px 20px;
-  gap: 8px;
-  border: 1px solid var(--color-border-dark);
+
+  border: 1px solid #665f55;
   border-radius: 100px;
+
+  background-color: transparent;
+  color: #403f3d;
 
   font-size: 16px;
   font-weight: 600;
+}
+
+body.dark-theme .app-button {
+  border-color: #c1b6ad;
+  color: #e1d4c9;
+}
+
+.app-button:hover {
+  background-color: var(--color-hover-bg);
+  color: var(--color-hover-text);
+  border-color: var(--color-hover-bg);
+}
+
+.app-buttons-icon-light,
+.app-buttons-icon-dark {
+  width: 36px;
+  height: 36px;
 }
 
 .app-buttons-icon-dark {
   display: none;
 }
 
-body.dark-theme .app-buttons-icon-dark {
+body.dark-theme .app-buttons-icon-light {
   display: none;
 }
 
-body.dark-theme .app-buttons-icon-light {
+body.dark-theme .app-buttons-icon-dark {
   display: block;
 }
 
@@ -519,6 +549,11 @@ body.dark-theme .app-buttons-icon-light {
 
   border: 1px solid var(--color-border-light);
   border-radius: 50%;
+}
+
+.social-links a:hover {
+  background-color: var(--color-hover-social);
+  border-color: var(--color-hover-social);
 }
 
 .social-links img {
@@ -979,23 +1014,44 @@ footer {
   }
 
   .social-links a {
-    transition: background-color 0.3s ease, border-color 0.3s ease,
-      transform 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
   .social-links a:hover {
     background-color: var(--color-hover-social);
     border-color: var(--color-hover-social);
-    transform: scale(1.05);
   }
 
-  .app-button,
   .menu-tab {
     transition: background-color 0.3s ease, color 0.3s ease,
       border-color 0.3s ease;
   }
 
-  .app-button:hover,
+  .app-button {
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .app-button:hover {
+    background-color: #665f55;
+    border-color: #665f55;
+    color: #e1d4c9;
+  }
+
+  body.dark-theme .app-button:hover {
+    background-color: #403f3d;
+    border-color: #403f3d;
+    color: #e1d4c9;
+  }
+
+  .app-button:hover .app-buttons-icon-light {
+    display: none;
+  }
+
+  .app-button:hover .app-buttons-icon-dark {
+    display: block;
+  }
+
   .menu-tab:hover,
   .slider-button:hover {
     background-color: var(--color-hover-bg);
@@ -1010,5 +1066,35 @@ footer {
   .menu-card:hover {
     transform: translateY(-4px);
     border-color: var(--color-border-dark);
+  }
+
+  .enjoy-menu-button:hover img {
+    width: 20px;
+    margin-left: 8px;
+    opacity: 1;
+  }
+
+  .footer-contacts a span {
+    position: relative;
+  }
+
+  .footer-contacts a span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--color-on-dark);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-contacts a:hover span::after {
+    transform: scaleX(1);
   }
 }
