@@ -71,6 +71,33 @@ header {
   padding: 0;
 }
 
+.header-navigation a,
+.menu-link {
+  position: relative;
+}
+
+.header-navigation a::after,
+.menu-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--color-text-dark);
+
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.header-navigation a:hover::after,
+.menu-link:hover::after {
+  transform: scaleX(1);
+}
+
 .logo {
   width: 100px;
   height: 60px;
@@ -739,6 +766,10 @@ footer {
     width: 100%;
   }
 
+  .menu h1 {
+    padding-top: 20px;
+  }
+
   .menu-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 40px;
@@ -756,7 +787,28 @@ footer {
     display: none;
   }
 }
-@media (max-width: 380px) {
+
+@media (max-width: 600px) {
+  .enjoy-content h1 {
+    font-size: 42px;
+    line-height: 115%;
+  }
+
+  #favorite-coffee h2,
+  #about h2,
+  .mobile-app-content h2,
+  .footer-socials h2,
+  .menu h1 {
+    font-size: 32px;
+    line-height: 125%;
+  }
+
+  .menu h1 {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
   header,
   main {
     padding-left: 16px;
@@ -846,6 +898,7 @@ footer {
   .about-column:last-child img:last-child {
     height: 590px;
   }
+
   #mobile-app {
     gap: 40px;
   }
@@ -863,6 +916,7 @@ footer {
     width: 100%;
     max-width: 348px;
   }
+
   #contacts {
     gap: 40px;
     padding: 60px 16px;
