@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee house</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/icons/favicon.svg">
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo" aria-label="Coffee House home">
+      <img class="logo-light" src="assets/icons/logo.svg" alt="Coffee House">
+
+      <img class="logo-dark" src="assets/icons/logo-dark.svg" alt="">
+    </a>
+    <nav>
+      <ul class="header-navigation">
+        <li>
+          <a href="#favorite">Favorite coffee</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#mobile-app">Mobile app</a>
+        </li>
+        <li>
+          <a href="#contacts">Contact us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="menu.html" class="menu-link">
+        <span>Menu</span>
+        <img src="assets/icons/coffee-cup.svg" alt="">
+      </a>
+
+      <button type="button" class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+        <img class="theme-switch-light" src="assets/icons/theme-light.svg" alt="">
+
+        <img class="theme-switch-dark" src="assets/icons/theme-dark.svg" alt="">
+      </button>
+
+      <button type="button" class="burger-button" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="enjoy">
+      <div class="enjoy-content">
+        <h1><span>Enjoy</span> premium coffee at our charming cafe</h1>
+        <p>
+          With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination
+          for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.
+        </p>
+        <a href="menu.html" class="enjoy-menu-button">
+          <span>Menu</span>
+          <img src="assets/icons/coffee-cup.svg" alt="">
+        </a>
+      </div>
+    </section>
+
+    <section id="favorite">
+      <h2>Choose your <span>favorite </span>coffee</h2>
+      <div class="slider">
+        <button type="button" class="slider-button slider-button-left">←</button>
+        <div class="slides">
+          <article class="coffee-slide">
+            <img src="assets/images/coffee-slider-1.png" alt="S’mores Frappuccino">
+            <h3>S’mores Frappuccino</h3>
+            <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat
+              milk</p>
+            <p>$5.50</p>
+          </article>
+          <article class="coffee-slide">
+            <img src="assets/images/coffee-slider-2.png" alt="Caramel Macchiato">
+            <h3>Caramel Macchiato</h3>
+            <p>Description</p>
+            <p>$5.00</p>
+          </article>
+
+          <article class="coffee-slide">
+            <img src="assets/images/coffee-slider-3.png" alt="Ice Coffee">
+            <h3>Ice Coffee</h3>
+            <p>Description</p>
+            <p>$4.50</p>
+          </article>
+        </div>
+        <button type="button" class="slider-button slider-button-right">→</button>
+      </div>
+      <div class="slider-controls">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>
+        Resource is <span>the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch
+        up with
+        friends, or get some work done.
+      </h2>
+      <div class="about-images">
+        <div class="about-column">
+          <img src="assets/images/about-1.jpg" alt="A woman drinking coffee">
+          <img src="assets/images/about-2.jpg" alt="A man drinking coffee">
+
+        </div>
+        <div class="about-column">
+          <img src="assets/images/about-4.jpg" alt="A happy couple drinking coffee">
+          <img src="assets/images/about-3.jpg" alt="Coffee shop atmosphere">
+        </div>
+      </div>
+    </section>
+
+    <section id="mobile-app">
+      <div class="mobile-app-content">
+        <h2><span>Download</span> our apps to start ordering</h2>
+
+        <p>
+          Download the Resource app today and experience the comfort of ordering
+          your favorite coffee from wherever you are
+        </p>
+
+        <div class="app-buttons">
+          <a href="https://www.apple.com/app-store/" class="app-button">
+            <img class="app-buttons-icon-light" src="assets/icons/apple-dark.svg" alt="">
+            <img class="app-buttons-icon-dark" src="assets/icons/apple-light.svg" alt="">
+            <span>Available on the App Store</span>
+          </a>
+          <a href="https://play.google.com/store" class="app-button">
+            <img class="app-buttons-icon-light" src="assets/icons/play.svg" alt="">
+            <img class="app-buttons-icon-dark" src="assets/icons/google-light.svg" alt="">
+            <span>Available on Google Play</span>
+          </a>
+        </div>
+      </div>
+      <div class="mobile-app-image">
+        <img src="assets/images/mobile-screens.png" alt="Coffee House mobile application">
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contacts">
+    <div class="footer-socials">
+      <h2>Sip, Savor, Smile. <span>It’s coffee time!</span></h2>
+
+      <div class="social-links">
+        <a href="https://twitter.com/" aria-label="Twitter">
+          <img src="assets/icons/twitter.svg" alt="">
+        </a>
+
+        <a href="https://instagram.com/" aria-label="Instagram">
+          <img src="assets/icons/instagram.svg" alt="">
+        </a>
+
+        <a href="https://facebook.com/" aria-label="Facebook">
+          <img src="assets/icons/facebook.svg" alt="">
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-contacts">
+      <h3>Contact us</h3>
+
+      <address>
+        <a href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icons/pin-alt.svg" alt=""><span>8558 Green Rd., LA</span>
+        </a>
+
+        <a href="tel:+16035550123">
+          <img src="assets/icons/phone.svg" alt="">
+          <span>+1 (603) 555-0123</span>
+        </a>
+
+        <p>
+          <img src="assets/icons/clock.svg" alt="">
+          <span>Mon-Sat: 9:00 AM – 23:00 PM</span>
+        </p>
+      </address>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
