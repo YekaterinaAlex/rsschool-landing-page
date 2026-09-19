@@ -12,6 +12,15 @@
   --color-hover-bg: #665f55;
   --color-hover-text: #e1d4c9;
   --color-hover-social: #403f3d;
+
+  --tab-active-bg: #665f55;
+  --tab-active-icon-bg: #e1d4c9;
+
+  --tab-border: #c1b6ad;
+  --tab-icon-bg: #c1b6ad;
+
+  --tab-text: #403f3d;
+  --tab-active-text: #e1d4c9;
 }
 
 body.dark-theme {
@@ -24,6 +33,15 @@ body.dark-theme {
   --color-hover-bg: #e1d4c9;
   --color-hover-text: #403f3d;
   --color-hover-social: #292826;
+
+  --tab-active-bg: #403f3d;
+  --tab-active-icon-bg: #292826;
+
+  --tab-border: #665f55;
+  --tab-icon-bg: #665f55;
+
+  --tab-text: #e1d4c9;
+  --tab-active-text: #e1d4c9;
 }
 
 *,
@@ -551,11 +569,6 @@ body.dark-theme .app-buttons-icon-dark {
   border-radius: 50%;
 }
 
-.social-links a:hover {
-  background-color: var(--color-hover-social);
-  border-color: var(--color-hover-social);
-}
-
 .social-links img {
   width: 24px;
   height: 24px;
@@ -627,20 +640,24 @@ footer {
   height: 46px;
   padding: 8px 16px 8px 8px;
 
-  border: 1px solid var(--color-border-light);
+  border: 1px solid var(--tab-border);
   border-radius: 100px;
 
-  background: transparent;
-  color: var(--color-text-dark);
+  background-color: transparent;
+  color: var(--tab-text);
 
   font-size: 16px;
   font-weight: 600;
 }
 
 .menu-tab.active {
-  background-color: var(--color-border-dark);
-  color: var(--color-on-dark);
-  border-color: var(--color-border-dark);
+  background-color: var(--tab-active-bg);
+  border-color: var(--tab-active-bg);
+  color: var(--tab-active-text);
+}
+
+.menu-tab.active .tab-icon {
+  background-color: var(--tab-active-icon-bg);
 }
 
 .tab-icon {
@@ -652,7 +669,7 @@ footer {
   height: 30px;
 
   border-radius: 50%;
-  background-color: var(--color-background);
+  background-color: var(--tab-icon-bg);
 }
 
 .tab-icon img {
@@ -849,7 +866,7 @@ footer {
     line-height: 115%;
   }
 
-  #favorite-coffee h2,
+  #favorite h2,
   #about h2,
   .mobile-app-content h2,
   .footer-socials h2,
@@ -915,7 +932,7 @@ footer {
     font-size: 42px;
     line-height: 115%;
   }
-  #favorite-coffee h2 {
+  #favorite h2 {
     font-size: 32px;
     line-height: 125%;
   }
