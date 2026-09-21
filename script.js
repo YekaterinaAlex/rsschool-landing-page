@@ -30,6 +30,42 @@ themeToggle.addEventListener('click', () => {
   updateThemeToggle();
 });
 
+const burgerButton = document.querySelector('.burger-button');
+const mobileMenu = document.querySelector('.mobile-menu');
+if (burgerButton && mobileMenu) {
+  burgerButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    burgerButton.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+  });
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    mobileMenu.classList.remove('open');
+    burgerButton.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    mobileMenu.classList.remove('open');
+    burgerButton.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+});
+
+const mobileLinks = document.querySelectorAll('.mobile-navigation a');
+
+mobileLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    burgerButton.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  });
+});
+
 const menuGrid = document.querySelector('.menu-grid');
 const menuTabs = document.querySelectorAll('.menu-tab');
 const loadMoreButton = document.querySelector('.load-more');
