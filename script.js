@@ -32,6 +32,89 @@ themeToggle.addEventListener('click', () => {
 
 const burgerButton = document.querySelector('.burger-button');
 const mobileMenu = document.querySelector('.mobile-menu');
+
+const slides = document.querySelectorAll('.coffee-slide');
+const prevButton = document.querySelector('.slider-button-left');
+const nextButton = document.querySelector('.slider-button-right');
+const sliderIndicators = document.querySelectorAll('.slider-controls span');
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide) => {
+    slide.classList.remove('active');
+  });
+
+  sliderIndicators.forEach((indicator) => {
+    indicator.classList.remove('active');
+  });
+
+  slides[index].classList.add('active');
+  sliderIndicators[index].classList.add('active');
+}
+
+if (nextButton && prevButton && slides.length) {
+  nextButton.addEventListener('click', () => {
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+  });
+
+  prevButton.addEventListener('click', () => {
+    currentSlide--;
+
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+  });
+}
+
+let touchStartX = 0;
+let touchEndX = 0;
+slides.forEach((slide) => {
+  slide.addEventListener('touchstart', (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  });
+});
+
+slides.forEach((slide) => {
+  slide.addEventListener('touchend', (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+
+    handleSwipe();
+  });
+});
+
+function handleSwipe() {
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (swipeDistance < -50) {
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+  }
+
+  if (swipeDistance > 50) {
+    currentSlide--;
+
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+  }
+}
+
 if (burgerButton && mobileMenu) {
   burgerButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('open');
