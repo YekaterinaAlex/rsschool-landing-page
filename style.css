@@ -855,6 +855,14 @@ footer {
     display: flex;
   }
 
+  .menu-grid.show-all .menu-card:nth-child(n + 5) {
+    display: block;
+  }
+
+  .load-more.is-hidden {
+    display: none !important;
+  }
+
   .menu-card:nth-child(n + 5) {
     display: none;
   }
