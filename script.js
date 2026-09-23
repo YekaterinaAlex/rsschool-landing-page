@@ -38,7 +38,26 @@ const prevButton = document.querySelector('.slider-button-left');
 const nextButton = document.querySelector('.slider-button-right');
 const sliderIndicators = document.querySelectorAll('.slider-controls span');
 
+const modalOverlay = document.querySelector('.modal-overlay');
+const modalImage = document.querySelector('.modal-image');
+const modalTitle = document.querySelector('#modal-title');
+const modalDescription = document.querySelector('.modal-description');
+const modalPrice = document.querySelector('.modal-price');
+const modalSizes = document.querySelector('.modal-sizes');
+const modalAdditives = document.querySelector('.modal-additives');
+const modalClose = document.querySelector('.modal-close');
+
 let currentSlide = 0;
+
+function closeModal() {
+  modalOverlay.classList.remove('open');
+  modalOverlay.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+if (modalClose) {
+  modalClose.addEventListener('click', closeModal);
+}
 
 function showSlide(index) {
   slides.forEach((slide) => {
@@ -193,8 +212,106 @@ function renderProducts(products, category) {
     card.append(image, content);
 
     menuGrid.append(card);
+
+    card.addEventListener('click', () => {
+      modalImage.src = `assets/images/${category}-${index + 1}.jpg`;
+      modalImage.alt = product.name;
+      modalTitle.textContent = product.name;
+      modalDescription.textContent = product.description;
+      modalPrice.textContent = `$${product.price}`;
+      let selectedSizePrice = 0;
+      let selectedAdditivesPrice = 0;
+
+      function updateModalPrice() {
+        const total =
+          Number(product.price) + selectedSizePrice + selectedAdditivesPrice;
+
+        modalPrice.textContent = `$${total.toFixed(2)}`;
+      }
+
+      modalSizes.innerHTML = '';
+
+      Object.entries(product.sizes).forEach(([key, value], index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.classList.add('modal-option');
+        const badge = document.createElement('span');
+        badge.classList.add('modal-option-badge');
+        badge.textContent = key.toUpperCase();
+
+        const label = document.createElement('span');
+        label.textContent = value.size;
+
+        button.append(badge, label);
+        if (index === 0) {
+          button.classList.add('active');
+        }
+
+        button.addEventListener('click', () => {
+          modalSizes
+            .querySelectorAll('.modal-option')
+            .forEach((item) => item.classList.remove('active'));
+          button.classList.add('active');
+          selectedSizePrice = Number(value['add-price']);
+
+          updateModalPrice();
+        });
+        modalSizes.append(button);
+      });
+      modalAdditives.innerHTML = '';
+
+      product.additives.forEach((additive, index) => {
+        const button = document.createElement('button');
+
+        button.type = 'button';
+        button.classList.add('modal-option');
+
+        const badge = document.createElement('span');
+        badge.classList.add('modal-option-badge');
+        badge.textContent = index + 1;
+
+        const label = document.createElement('span');
+        label.textContent = additive.name;
+
+        button.append(badge, label);
+
+        button.addEventListener('click', () => {
+          button.classList.toggle('active');
+
+          const additivePrice = Number(additive['add-price']);
+
+          if (button.classList.contains('active')) {
+            selectedAdditivesPrice += additivePrice;
+          } else {
+            selectedAdditivesPrice -= additivePrice;
+          }
+
+          updateModalPrice();
+        });
+
+        modalAdditives.append(button);
+      });
+      updateModalPrice();
+      modalOverlay.classList.add('open');
+      modalOverlay.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    });
   });
 }
+
+if (modalOverlay) {
+  modalOverlay.addEventListener('click', (event) => {
+    if (event.target === modalOverlay) {
+      closeModal();
+    }
+  });
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && modalOverlay?.classList.contains('open')) {
+    closeModal();
+  }
+});
 
 fetch('products.json')
   .then((response) => response.json())
