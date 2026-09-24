@@ -51,93 +51,36 @@
       </button>
     </div>
   </header>
+
+  <div class="mobile-menu">
+
+    <nav class="mobile-navigation">
+      <a href="index.html#favorite">Favorite coffee</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#mobile-app">Mobile app</a>
+      <a href="#contacts">Contact us</a>
+      <a href="menu.html">Menu</a>
+    </nav>
+  </div>
+
   <main>
     <section class="menu">
       <h1>
         Behind each of our cups hides an <span>amazing surprise</span>
       </h1>
+
+
       <div class="menu-tabs">
-        <button type="button" class="menu-tab active"><span class="tab-icon"><img src="assets/icons/coffee.png"
-              alt=""></span><span>Coffee</span></button>
-        <button type="button" class="menu-tab"><span class="tab-icon"><img src="assets/icons/tea.png"
-              alt=""></span><span>Tea</span></button>
-        <button type="button" class="menu-tab"><span class="tab-icon"><img src="assets/icons/dessert.png"
-              alt=""></span><span>Dessert</span></button>
+        <button type="button" class="menu-tab active" data-category="coffee"><span class="tab-icon"><img
+              src="assets/icons/coffee.png" alt=""></span><span>Coffee</span></button>
+        <button type="button" class="menu-tab" data-category="tea"><span class="tab-icon"><img
+              src="assets/icons/tea.png" alt=""></span><span>Tea</span></button>
+        <button type="button" class="menu-tab" data-category="dessert"><span class="tab-icon"><img
+              src="assets/icons/dessert.png" alt=""></span><span>Dessert</span></button>
       </div>
 
       <div class="menu-grid">
 
-        <article class="menu-card">
-          <img src="assets/images/coffee-1.jpg" alt="Irish coffee">
-          <div class="menu-card-content">
-            <h2>Irish coffee</h2>
-            <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-            <p>$7.00</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="assets/images/coffee-2.jpg" alt="Kahlua coffee">
-          <div class="menu-card-content">
-            <h2>Kahlua coffee</h2>
-            <p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
-            <p>$7.00</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="assets/images/coffee-3.jpg" alt="Honey raf">
-          <div class="menu-card-content">
-            <h2>Honey raf</h2>
-            <p>Espresso with frothed milk, cream and aromatic honey</p>
-            <p>$5.50</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="assets/images/coffee-4.jpg" alt="Ice cappuccino">
-          <div class="menu-card-content">
-            <h2>Ice cappuccino</h2>
-            <p>Cappuccino with soft thick foam in summer version with ice</p>
-            <p>$5.00</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="assets/images/coffee-5.jpg" alt="Espresso">
-          <div class="menu-card-content">
-            <h2>Espresso</h2>
-            <p>Classic black coffee</p>
-            <p>$4.50</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="assets/images/coffee-6.jpg" alt="Latte">
-          <div class="menu-card-content">
-            <h2>Latte</h2>
-            <p>Espresso coffee with the addition of steamed milk and dense milk foam</p>
-            <p>$5.50</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="assets/images/coffee-7.jpg" alt="Latte Macchiato">
-          <div class="menu-card-content">
-            <h2>Latte Macchiato</h2>
-            <p>Espresso with frothed milk and chocolate</p>
-            <p>$5.50</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="assets/images/coffee-8.jpg" alt="Coffee with cognac">
-          <div class="menu-card-content">
-            <h2>Coffee with cognac</h2>
-            <p>Fragrant black coffee with cognac and whipped cream</p>
-            <p>$6.50</p>
-          </div>
-        </article>
 
       </div>
       <button type="button" class="load-more">
@@ -145,6 +88,34 @@
       </button>
     </section>
   </main>
+
+  <div class="modal-overlay" aria-hidden="true">
+    <div class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <img class="modal-image" src="" alt="">
+
+      <div class="modal-content">
+        <h2 id="modal-title"></h2>
+
+        <p class="modal-description"></p>
+
+        <p class="modal-label">Size</p>
+        <div class="modal-sizes"></div>
+
+        <p class="modal-label">Additives</p>
+        <div class="modal-additives"></div>
+
+        <div class="modal-total">
+          <span>Total:</span>
+          <span class="modal-price"></span>
+        </div>
+
+        <button type="button" class="modal-close">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
   <footer id="contacts">
     <div class="footer-socials">
       <h2>Sip, Savor, Smile. <span>It’s coffee time!</span></h2>
