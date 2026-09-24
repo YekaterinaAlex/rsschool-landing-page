@@ -1112,6 +1112,17 @@ body.modal-open {
   }
 }
 
+@media (max-width: 650px) {
+  .modal-image {
+    display: none;
+  }
+
+  .modal-content {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 @media (max-width: 600px) {
   .enjoy-content h1 {
     font-size: 42px;
@@ -1129,15 +1140,6 @@ body.modal-open {
 
   .menu h1 {
     padding-top: 20px;
-  }
-
-  .modal-image {
-    display: none;
-  }
-
-  .modal-content {
-    width: 100%;
-    min-width: 0;
   }
 }
 
